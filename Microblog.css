@@ -1,79 +1,5 @@
-/* We're going to begin our CSS work by styling the header.
-So let's get to it. */
-
-/* We want to limit the size of the navbar so that it doesn't take up the entire width of the screen.
-If you remember (figma), from our designs, the navbar was constrained to 640 pixels. */
-
-/* The next thing we're going to do is we're going to add some margin and that's going to be 50 pixels above and below and auto left and right.
-That is going to give it some distance from the top and from subsequent elements and also is going to centre it on the page. */
-
-/* The next thing we're going to do is we're going to add some padding. So we'll do padding zero 20 pixels.
-That is going to separate the contents from the edges of the container. So all the contents of the navbar are now separated, and the navbar
-is still going edge to edge. A common question would be why not put the 20 pixels here?
-If we do that, the element would no longer be centred when the size of the window is higher than 640 pixels.
-So we do want to keep the auto there. */
-
-/* The next thing we want to do is we want to layout the elements as a row instead of a column.
-You can see that at the moment, the image and this text here are side by side, which is good.
-But then the list appears below it because it is a block element. We want to make them all up here in the same line.
-So we'll do display: flex and flex-direction: row. By doing this, they now appear side by side. */
 
 
-/* What we want to do is we want to add a gap between the div and the list that is as big as possible.
-We can do that with justify-content: space-between. Justify content is a way of specifying the gap between elements using space between
-means that between elements, we're going to put all the gap and because we only have two elements, these two are going to be separated as much as possible. */
-
-/* I'm also going to set the font size to 24 pixels as per the design, and that's going to make things a little bit bigger. */
-
-/* .navbar {
-    max-width:640px;
-    margin: 50px auto;
-    padding : 0 20px;
-    display : flex;
-    flex-direction: row;
-    justify-content : space-between;
-    font-size: 24px;
-} */
-
-
-
-/* For the brand here, I know that I want to align the logo and the text to be centered.
-So I'm going to use display flex, and you can see that that now produces some janky alignment, but then we're going to do align-items:
-center and now they are aligned. For the logo itself, which is in here, we're going to do margin-right, and
-we're going to set it to 30 pixels. And now that separates the logo from the text.
- */
-
-/* .navbar {
-    max-width:640px;
-    margin: 50px auto;
-    padding : 0 20px;
-    display : flex;
-    flex-direction: row;
-    justify-content : space-between;
-    font-size: 24px;
-}
-
-.navbar__brand {
-    display:flex;
-    align-items:center;
-    
-}
-
-.navbar__logo{
-    margin-right: 30px;
-}
-
- */
-
-
-
-/* now do for recent and calender */
-
-/* adding font family 
-you don't have the Lato font. It'll automatically go to a sans-serif default of the system.
-So by doing this, we can now refresh the page and we'll use Lato if we have it or a default sans-serif font if we don't.
-And if you want to download the Lato font. You can do so from Google fonts. It's free.
-*/
 
 html {
     font-family:Lato,sans-serif;
@@ -122,66 +48,6 @@ html {
 
 
 
-/* we're going to learn how to style our form using CSS. */
-
-/* All right, let's go down here and start with the main content. So we're going to do main, and then we're going to do max width 450 pixels,
-margin 0 auto and padding 0 20 pixels. that is going to limit this to 450 pixels and is going to add
-a little bit of padding and it's going to centre it on the page. see(figma) */
-
-/* All right, let's get started with the form. We're going to do form display: flex and flex-direction: column.
-And we want this so that we can style the elements and centre them a bit more easily using flex. */
-
-/* What we're going to do is we're going to do align-items: flex-end. And that is going to align all the items to the right. */
-/* We then want to make sure that the paragraph takes up the entire width of the container. */
-
-/* he text area still occupies the size that it did earlier on. So we're going to want to change that.
-First we'll do form_label and we'll change it to a block so that it takes up 100% of the available space and then margin bottom 10 pixels.
-Make sure to not miss any underscores there. There we have it. Now that is taken up 100% of the available space, which means a text
-area automatically appears below it. And we've added a little bit of margin there to separate it from the text area. */
-
-/* Now we can go into the text area. And what we're going to do is width set to inherit, which is going to make
-it the same width as the container. Bringing it to a hundred percent. And then we're going to set the font size to 18 pixels.
-We want to do this because by default, the font size here is quite small. 
-We also want to add a little bit of padding. You can see the text appears very close to the corner of the text
-area with some padding we're going to separate that from the sides. We will do padding 12 pixels and 20 pixels.
-Again, that's going to set 12 pixels at the top and bottom. 20 pixels left and right.
-So now we can see that the text here appears a bit further away from the sides.
-*/
-
-/* Something to note right now with this text area, is that it
-
-is bigger than the container.
-
-Because we've got this add entry button that is pushed as far to the
-
-right as possible in the container.
-
-We've said that with align-items: flex-end, but clearly the text
-
-area is going further right in its size than the button.
-
-This is where the box sizing comes into play.
-
-The text area has a padding on the left and right.
-
-And you can see that the difference in size from the side of the button to the
-
-end of the text area is twice the padding.
-
-So that's the padding on the left plus the padding on the right added together.
-
-That is how much it's overhanging by.
-
-At the moment we haven't set to the box sizing to border box
-
-which is why this is happening.
-
-But if we do box-sizing: border box, then this will no longer happen.
-
-And the text area will now be the right size.
- */
-
-/* **impt y margin 0 see .footer because footer was not taking full screen  */
 
 *,
 *::before,
@@ -248,17 +114,6 @@ body {
 
 
 
-/* Let's style our microblog entries. */
-
-/* Here, we're going to make a change that you don't see made very often. We want to display the entry title on the same line as this time element.
-So what we're going to do is when I do display: inline and that is going to make it well inline.
-And because the time element is already inline, they now appear side-by-side. And remember an inline element just takes up as much space as its content needs.
-Whereas a block element takes up all the width of the container. So normally, heading level elements are display block, but
-now we're changing it to inline so that they appear side-by-side. The other thing we are going to do is we're going to adjust the font size.
-Notice that adjusting the font size doesn't mean that this is now less important.
-It just means that it looks a bit different but for a screen */
-
-
 
 .entry {
     margin-top : 50px;
@@ -281,57 +136,6 @@ It just means that it looks a bit different but for a screen */
 }
 
 
-/* style footer */
-
-/* The first thing to remember is that our footer has two containers of sorts.
-
-There's the footer main element or the block.
-
-And then there's this footer content.
-
-The footer is going to be full width and it's going to occupy
-
-100% of the width of the page.
-
-And it's going to have a background colour.
-
-And the footer content is going to be limited to be the same size as the header. */
-
-/* nd you can see that we've got a little bit of space there
-
-between the elements and the body.
-
-We're actually going to get rid of that.
-
-I didn't remember to get rid of that before, but you can see if we right click
-
-on that little gap and inspected it.
-
-It is here.
-
-Let me just bring this up into the computed tab and in the body.
-
-There's a little bit of margin there that we're going to want to get rid of.
-
-So in body, we're going to do margin zero.
-
-And that's just going to get rid of that. */
-
-/* And then we're going to add a little bit of padding 40 pixels and 0
-
-pixels just to separate it from the top and the bottom of its content. */
-
-/* Now we're also going to set a border top, and this is going to
-
-be a four pixel solid black border.
-
-Just to separate the footer from the rest of the page a little bit more */
-
-/* Now I'm going to do footer left to set the left side column and
-we're going to do flex-grow: 2. When multiple flex elements have flex grow, they're going to take
-up an amount of space equal to the ratio of flex grow out of the total sum of flex grows in the container.
-So that's a long winded way of saying that if we do footer right and we set this flex growth to one.
-Then this element is going to take up twice as much space as this one. */
 
 
 .footer {
